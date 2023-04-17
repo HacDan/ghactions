@@ -1,0 +1,7 @@
+on:
+  workflow_dispatch:
+    inputs:
+      environment:
+        description: 'Input version number'
+        required: true
+        default: '0.0.0-dev'
