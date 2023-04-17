@@ -1,7 +1,14 @@
 on:
   workflow_dispatch:
     inputs:
-      environment:
+      version:
         description: 'Input version number'
         required: true
         default: '0.0.0-dev'
+
+jobs:
+  printInputs:
+    runs-on: ubuntu-latest
+    steps:
+    - run: |
+        echo "Env: ${{ github.event.inputs.version }}" 
