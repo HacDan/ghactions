@@ -20,3 +20,4 @@ jobs:
 
       - name: Build Windows App
         run: GOOS=linux GOARCH=amd64 go build -ldflags="main.version=${{ github.event.inputs.version }}" -o hello_world_linux_amd64
+        run: ./hello_world_linux_amd64
