@@ -9,8 +9,16 @@ on:
         default: '0.0.0-dev'
 
 jobs:
-  printInputs:
-    runs-on: ubuntu-latest
+  build:
     steps:
-    - run: |
-        echo "Env: ${{ github.event.inputs.version }}" 
+      - name: Install go
+        uses: actions/setup-go@v2
+        with:
+          go-version: 1.20
+      - uses: actions/checkout@v2
+
+      - name: Build App
+        run: GOOS=windows GOARCH=amd64 go build -o hello_world_windows_amd64.exe
+        run: GOOS=darwin GOARCH=amd64 go build -o hello_world_darwin_amd64
+        run: GOOS=darwin GOARCH=arm64 go build -o hello_world_darwin_arm64
+        run: GOOS=linux GOARCH=arm64 go build -o hello_world_linux_amd64
