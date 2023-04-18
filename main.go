@@ -2,11 +2,10 @@ package main
 
 import (
         "fmt"
-        "os"
 )
 var Version string
 func main() {
-        if version == "" {
+        if Version == "" {
                 Version = "0.0.0-dev"
         }
 
