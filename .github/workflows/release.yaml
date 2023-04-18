@@ -1,4 +1,4 @@
-name: Release the Ezra
+name: Release
 run-name: ${{ github.actor }} is playing with Github releases
 on:
   workflow_dispatch:
