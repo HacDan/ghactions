@@ -4,11 +4,11 @@ import (
         "fmt"
         "os"
 )
-var version string
+var Version string
 func main() {
         if version == "" {
-                version  "0.0.0-dev"
+                Version = "0.0.0-dev"
         }
 
-        fmt.Println("Version: ", version)
+        fmt.Println("Version: ", Version)
 }

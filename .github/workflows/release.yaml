@@ -19,4 +19,4 @@ jobs:
       - uses: actions/checkout@v2
 
       - name: Build Windows App
-        run: GOOS=windows GOARCH=amd64 go build -o hello_world_windows_amd64.exe
+        run: GOOS=linux GOARCH=amd64 go build -ldflags="main.version="0.19.0"-o hello_world_linux_amd64
